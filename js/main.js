@@ -2,13 +2,10 @@ function validaTipo(valorCampo) {
   var valorTipado;
   if (valorCampo == "") {
     valorTipado = null;
-    console.log(valorTipado);
   } else if (valorCampo == "true" || valorCampo == "false") {
     valorTipado = valorCampo == "true";
   } else if (!isNaN(valorCampo)) {
-    console.log(valorCampo);
-    console.log(typeof valorCampo);
-    valorTipado = Number(valorCampo);
+    valorTipado = Number.parseFloat(valorCampo);
   } else {
     valorTipado = valorCampo;
   }
@@ -18,7 +15,6 @@ function validaTipo(valorCampo) {
 function valida(primeiroValor, segundoValor) {
   var operador = $("#seletor").val();
   let resultado;
-
   if (operador == "==") {
     resultado = primeiroValor == segundoValor;
   } else if (operador == "!=") {
@@ -51,7 +47,7 @@ $("#validar").click(function () {
   var operador = $("#seletor").val();
   var primeiroValor = validaTipo($("#primeiroValor").val());
   var segundoValor = validaTipo($("#segundoValor").val());
-  let valores = primeiroValor.toString() + operador + segundoValor.toString();
+  let valores = primeiroValor + operador + segundoValor;
   let resultado = valida(primeiroValor, segundoValor);
   tabela(
     valores,

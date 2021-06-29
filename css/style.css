@@ -1,10 +1,14 @@
 html {
+  font-size: x-large;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 100%;
   background:linear-gradient(to bottom right ,rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5)) no-repeat;
 }
 main {
   text-align: center;
+}
+input,select{
+  font-size: x-large;
 }
 
 #validar{
